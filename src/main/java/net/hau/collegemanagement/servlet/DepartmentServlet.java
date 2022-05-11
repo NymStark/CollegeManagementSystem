@@ -95,9 +95,9 @@ public class DepartmentServlet extends HttpServlet {
     private void insertDepartment(HttpServletRequest request, HttpServletResponse response)
     throws SQLException, IOException {
         String name = request.getParameter("name");
-        String semester = request.getParameter("semester");
-        System.out.println("name="+name + " sem=" + semester);
-        Department newDepartment = new Department(name, semester);
+        String abbreviation = request.getParameter("abbreviation");
+        System.out.println("name="+name + " sem=" + abbreviation);
+        Department newDepartment = new Department(name, abbreviation);
         System.out.println("Inside DepartmentServlet.insertDepartment: " + newDepartment.getName());
     	// start a transaction
         departmentDao.saveDepartment(newDepartment);
@@ -108,9 +108,9 @@ public class DepartmentServlet extends HttpServlet {
     throws SQLException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
-        String semester = request.getParameter("semester");
+        String abbreviation = request.getParameter("abbreviation");
 
-        Department department = new Department(id, name, semester);
+        Department department = new Department(id, name, abbreviation);
         departmentDao.updateDepartment(department);
         response.sendRedirect("list");
     }

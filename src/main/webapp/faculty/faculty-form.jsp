@@ -68,14 +68,7 @@
                   />
                 </td>
             </tr>
-            <tr>
-                <th>Semester: </th>
-                <td>
-                 <input type="text" name="semester" size="15"
-                   value="<c:out value='${faculty.semester}' />"
-                 />
-                </td>
-            </tr>
+ 
             <tr>
              <td colspan="2" align="center">
               <input type="submit" value="Save" />

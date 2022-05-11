@@ -21,14 +21,14 @@
             <tr>
                 <th>Department ID</th>
                 <th>Department Name</th>
-                <th>Semester</th>
+                <th>Abbreviation</th>
                 <th>Actions</th>
             </tr>
             <c:forEach var="department" items="${listDepartment}">
                 <tr>
                     <td><c:out value="${department.id}" /></td>
                     <td><c:out value="${department.name}" /></td>
-                    <td><c:out value="${department.semester}" /></td>
+                    <td><c:out value="${department.abbreviation}" /></td>
                     <td>
                      <a href="edit?id=<c:out value='${department.id}' />">Edit</a>
                      &nbsp;&nbsp;&nbsp;&nbsp;

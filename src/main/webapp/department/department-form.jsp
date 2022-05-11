@@ -46,10 +46,10 @@
             </tr>
             
             <tr>
-                <th>Semester: </th>
+                <th>Abbreviation: </th>
                 <td>
-                 <input type="text" name="semester" size="15"
-                   value="<c:out value='${department.semester}' />"
+                 <input type="text" name="abbreviation" size="15"
+                   value="<c:out value='${department.abbreviation}' />"
                  />
                 </td>
             </tr>

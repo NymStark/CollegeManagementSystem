@@ -24,7 +24,6 @@
                 <th>Last Name</th>
                 <th>Email</th>
                 <th>Department</th>
-                <th>Semester</th>
                 <th>Actions</th>
             </tr>
             <c:forEach var="faculty" items="${listFaculty}">
@@ -34,7 +33,6 @@
                     <td><c:out value="${faculty.last_name}"/></td>
                     <td><c:out value="${faculty.email}"/></td>
                     <td><c:out value="${faculty.department}"/></td>
-                    <td><c:out value="${faculty.semester}"/></td>
                     <td>
                      <a href="edit?id=<c:out value='${faculty.id}' />">Edit</a>
                      &nbsp;&nbsp;&nbsp;&nbsp;

@@ -9,7 +9,7 @@ import javax.persistence.Table;
 /**
  * Faculty.java
  * This is a model class represents a Faculty entity
- * Attributes: id, first name, last name, email, department, semester
+ * Attributes: id, first name, last name, email, department
  */
 
 @Entity
@@ -32,31 +32,26 @@ public class Faculty {
 	 
 	 @Column(name="department")
 	 protected String department;
-	 
-	 @Column(name="semester")
-	 protected String semester;
-	 
+	  
 	 public Faculty(){
 		 
 	 }
 	 
-	 public Faculty( String first_name, String last_name, String email, String department, String semester) {
+	 public Faculty( String first_name, String last_name, String email, String department) {
 		 super();
 		 this.first_name = first_name;
 		 this.last_name = last_name;
 		 this.email = email;
 		 this.department = department;
-		 this.semester = semester;
 	 }
 	 
-	 public Faculty(int id, String first_name, String last_name, String email, String department, String semester) {
+	 public Faculty(int id, String first_name, String last_name, String email, String department) {
 		 super();
 		 this.id = id;
 		 this.first_name = first_name;
 		 this.last_name = last_name;
 		 this.email = email;
 		 this.department = department;
-		 this.semester = semester;
 	 }
 
 	public int getId() {
@@ -97,15 +92,6 @@ public class Faculty {
 
 	public void setDepartment(String department) {
 		this.department = department;
-	}
-
-	public String getSemester() {
-		return semester;
-	}
-
-	public void setSemester(String semester) {
-		this.semester = semester;
-	}
-	 
+	}	 
 	 
 }

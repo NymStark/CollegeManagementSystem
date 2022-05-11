@@ -26,26 +26,26 @@ public class Department {
 	 @Column(name="name")
 	 protected String name;
 	 
-	 @Column(name="semester")
-	 protected String semester;
+	 @Column(name="abbreviation")
+	 protected String abbreviation;
 	 
 	 
 public Department() {
 	}
 
-public Department( String name, String semester) {
+public Department( String name, String abbreviation) {
 	super();
 	this.name = name;
-	this.semester = semester;	
+	this.abbreviation = abbreviation;	
 
 }
 
-public Department(int id, String name, String semester) {
+public Department(int id, String name, String abbreviation) {
 	super();
 	
 	this.id = id;
 	this.name = name;
-	this.semester = semester;
+	this.abbreviation = abbreviation;
 }
 
 public int getId() {
@@ -64,12 +64,12 @@ public void setName(String name) {
 	this.name = name;
 }
 
-public String getSemester() {
-	return semester;
+public String getAbbreviation() {
+	return abbreviation;
 }
 
-public void setSemester(String semester) {
-	this.semester = semester;
+public void setAbbreviation(String abbreviation) {
+	this.abbreviation = abbreviation;
 }
 
 

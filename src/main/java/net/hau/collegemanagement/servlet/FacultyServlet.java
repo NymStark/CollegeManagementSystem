@@ -95,11 +95,10 @@ public class FacultyServlet extends HttpServlet {
         String last_name = request.getParameter("last_name");
         String email = request.getParameter("email");
         String department = request.getParameter("department");
-        String semester = request.getParameter("semester");
         
-        System.out.println("name="+first_name+ " "+last_name + " sem=" + semester);
+        System.out.println("name="+first_name+ " "+last_name + " email= " + email);
         
-        Faculty newFaculty = new Faculty(first_name, last_name, email, department, semester);
+        Faculty newFaculty = new Faculty(first_name, last_name, email, department);
         System.out.println("Inside FacultyServlet.insertFaculty: " + newFaculty.getFirst_name());
         
         
@@ -115,9 +114,8 @@ public class FacultyServlet extends HttpServlet {
         String last_name = request.getParameter("last_name");
         String email = request.getParameter("email");
         String department = request.getParameter("department");
-        String semester = request.getParameter("semester");
 
-        Faculty faculty = new Faculty(id,first_name, last_name, email, department, semester);
+        Faculty faculty = new Faculty(id,first_name, last_name, email, department);
         facultyDao.updateFaculty(faculty);
         response.sendRedirect("list");
     }
