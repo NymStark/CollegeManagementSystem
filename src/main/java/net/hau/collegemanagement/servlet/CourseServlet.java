@@ -93,12 +93,13 @@ public class CourseServlet extends HttpServlet {
     throws SQLException, IOException {
         String name = request.getParameter("name");
         String department = request.getParameter("department");
+        String courseAbbreviation = request.getParameter("courseAbbreviation");
         String semester = request.getParameter("semester");
         int max_students = Integer.parseInt(request.getParameter("max_students"));
         
         System.out.println("max students=" + max_students + " sem=" + semester);
         
-        Course newCourse = new Course(name, department, semester, max_students);
+        Course newCourse = new Course(name, department, courseAbbreviation, semester, max_students);
         System.out.println("Inside CourseServlet.insertCourse: " + newCourse.getName());
         
         
@@ -112,10 +113,11 @@ public class CourseServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         String department = request.getParameter("department");
+        String courseAbbreviation = request.getParameter("courseAbbreviation");
         String semester = request.getParameter("semester");
         int max_students = Integer.parseInt(request.getParameter("max_students"));
 
-        Course course = new Course(id, name, department, semester, max_students);
+        Course course = new Course(id, name, department, courseAbbreviation, semester, max_students);
         courseDao.updateCourse(course);
         response.sendRedirect("list");
     }

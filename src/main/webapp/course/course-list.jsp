@@ -2,10 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
-<head>
- <title>Course Management Application</title>
-</head>
+<c:import url="${request.getContextPath()}/include/header.jsp" >
+	<c:param name="title" value="Course Management" />
+</c:import>
+
 <body>
+<div class="container mtb">
+	<div class="row">
  <center>
   <h1>Course Management</h1>
         <h2>
@@ -22,6 +25,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Department</th>
+                <th>Abbreviation</th>
                 <th>Semester</th>
                 <th>Maximum Capacity</th>
                 <th>Actions</th>
@@ -31,6 +35,7 @@
                     <td><c:out value="${course.id}"/></td>
                     <td><c:out value="${course.name}"/></td>
                     <td><c:out value="${course.department}"/></td>
+                    <td><c:out value="${course.courseAbbreviation}"/></td>
                     <td><c:out value="${course.semester}"/></td>
                     <td><c:out value="${course.max_students}"/></td>
                     <td>
@@ -42,5 +47,7 @@
             </c:forEach>
         </table>
     </div> 
+        </div> 
+    </div>
 </body>
-</html>
+<c:import url="${request.getContextPath()}/include/footer.jsp" />

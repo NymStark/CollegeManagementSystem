@@ -33,25 +33,31 @@ public class Course {
 	 @Column(name="max_students")
 	 protected int max_students;
 	 
+	 @Column(name="courseAbbreviation")
+	 protected String courseAbbreviation;
+	 
 	 public Course(){
 		 
 	 }
 	 
-	 public Course( String name, String department, String semester, int max_students) {
+	 public Course( String name, String department, String courseAbbreviation, String semester, int max_students) {
 		 super();
 		 this.name = name;
 		 this.department = department;
+		 this.courseAbbreviation = courseAbbreviation;
 		 this.semester = semester;
 		 this.max_students = max_students;
 	 }
 	 
-	 public Course(int id, String name, String department, String semester, int max_students) {
+	 public Course(int id, String name, String department, String courseAbbreviation, String semester, int max_students) {
 		 super();
 		 this.id = id;
 		 this.name = name;
 		 this.department = department;
+		 this.courseAbbreviation = courseAbbreviation;
 		 this.semester = semester;
 		 this.max_students = max_students;
+		 
 	 }
 
 	public int getId() {
@@ -92,6 +98,14 @@ public class Course {
 
 	public void setMax_students(int max_students) {
 		this.max_students = max_students;
+	}
+
+	public String getCourseAbbreviation() {
+		return courseAbbreviation;
+	}
+
+	public void setCourseAbbreviation(String courseAbbreviation) {
+		this.courseAbbreviation = courseAbbreviation;
 	}
 	 
 }

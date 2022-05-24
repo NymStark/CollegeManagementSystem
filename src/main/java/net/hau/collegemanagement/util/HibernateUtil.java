@@ -35,14 +35,16 @@ public class HibernateUtil {
 
     settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
 
-    settings.put(Environment.HBM2DDL_AUTO, "create-drop");
-    //settings.put(Environment.HBM2DDL_AUTO, "update");
+   // settings.put(Environment.HBM2DDL_AUTO, "create-drop");
+    settings.put(Environment.HBM2DDL_AUTO, "update");
 
     configuration.setProperties(settings);
     configuration.addAnnotatedClass(Student.class); //to work with the User table/class, we need to register here. 
     configuration.addAnnotatedClass(Department.class);
     configuration.addAnnotatedClass(Faculty.class);
     configuration.addAnnotatedClass(Course.class);
+    configuration.addAnnotatedClass(Registration.class);
+    configuration.addAnnotatedClass(CourseAssignment.class);
     
     ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
       .applySettings(configuration.getProperties()).build();
